@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h2>Hmm, looks like you need to log in</h2>
+
+<form asp-controller="Home" asp-action="Login" method="post">
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text" />
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" />
+    <input id="returnUrl" name="returnUrl" type="text" hidden="hidden" value="@ViewData["ReturnUrl"]"/>
+
+    <button type="submit">Log me in</button>
+</form>
+
