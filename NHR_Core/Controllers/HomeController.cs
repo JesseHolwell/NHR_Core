@@ -78,11 +78,10 @@ namespace NHR_Core.Controllers
 
                 return GoToReturnUrl(returnUrl);
             }
-            else
-            {
+            
                 ModelState.AddModelError("", "Login failed. Please check Username and/or password");
-                //return RedirectToAction(nameof(Denied));
-            }
+            //return RedirectToAction(nameof(Denied));
+            return View();
 
         }
 

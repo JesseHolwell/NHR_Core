@@ -1,0 +1,287 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+    var shows = new Dictionary<string, string>
+    ()
+{
+    { "3 Jul", "Rod Laver, Melbourne" },
+    { "6 Jul", "Rainbow Serpent, Lexton" },
+    { "8 Jul", "MTV Awards, New York" },
+    };
+}
+
+<div style="        overflow-x: hidden">
+    <div class="text-center sections row">
+        <div class="section col-sm-12">
+            <h1 class="display-4">NOTHING HURTS ROBOT</h1>
+        </div>
+
+        <div class="section col-sm-12">
+            <h2 class="mb-5">social media</h2>
+            <div class="row">
+                <div class="col-sm-4">
+                </div>
+                <div class="col-sm-4 justify-content-center">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <button class="btn btn-info btn-full"><i class="fab fa-facebook-f"></i></button>
+                        </div>
+                        <div class="col-sm-4">
+                            <button class="btn btn-info btn-full"><i class="fab fa-spotify"></i></button>
+                        </div>
+                        <div class="col-sm-4">
+                            <button class="btn btn-info btn-full"><i class="fab fa-soundcloud"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                </div>
+            </div>
+        </div>
+
+        <div class="section col-sm-12">
+            @*<h2>latest album name</h2>
+                <div>
+                    [art here]
+                </div>*@
+            <button class="btn btn-outline-primary">stream/download</button>
+        </div>
+
+        <div class="section col-sm-12">
+            <div class="">
+                <div class="row">
+                    <div class="col-sm-4">
+                    </div>
+                    <div class="col-sm-4 content-background">
+                        <h2 class="mb-5 mt-3">upcoming shows</h2>
+                        @foreach (var show in shows)
+                        {
+                            <div class="row mb-3 show-content">
+                                <div class="col-sm-1">
+                                </div>
+                                <div class="col-sm-3">
+                                    <span>@show.Key</span>
+                                </div>
+                                <div class="col-sm-4">
+                                    <span>@show.Value</span>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button class="btn btn-secondary"><i class="fas fa-ticket-alt"></i></button>
+                                </div>
+                                <div class="col-sm-1">
+                                </div>
+                            </div>
+                        }
+                        <button class="btn btn-primary mb-3 mt-2">More</button>
+                    </div>
+                    <div class="col-sm-4">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section col-sm-6">
+            <div class="row mb-3">
+                <div class="col-sm-2">
+                </div>
+                <div class="col-sm-8 content-background pt-4 ">
+                    <h3>join our mailing list</h3>
+                    <h5 class="mb-5">never miss an update</h5>
+
+                    <div class="mb-3">
+                        <input class="form-control mb-2" value="email address" />
+                        <button class="btn btn-primary">Subscribe</button>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                </div>
+            </div>
+        </div>
+
+        <div class="section col-sm-6">
+            <div class="row mb-3">
+                <div class="col-sm-2">
+                </div>
+                <div class="col-sm-8 content-background pt-4 ">
+                    <h3 class="mb-5" style="        margin-bottom: 8rem !important;">merch</h3>
+                    <div class="mb-3 mt-5">
+                        <button class="btn btn-primary">Buy my stuff</button>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                </div>
+            </div>
+        </div>
+
+        <div class="section col-sm-12">
+            <h4>Connect</h4>
+
+            <div>
+                <p>email@email.com</p>
+                <p>other..?</p>
+            </div>
+        </div>
+
+        @*<div>
+                boo.
+            </div>*@
+
+    </div>
+</div>
+
+<style>
+
+    body::-webkit-scrollbar {
+        width: 1em;
+    }
+
+    body::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    }
+
+    body::-webkit-scrollbar-thumb {
+        background-color: darkgrey;
+        outline: 1px solid slategrey;
+    }
+
+    h1 {
+        font-size: 5rem !important;
+        letter-spacing: 40px;
+    }
+
+    h2, h3 {
+        font-size: 4rem !important;
+    }
+
+    .btn-full {
+        width: 100%;
+    }
+
+    .content-background {
+        background-color: rgba(50, 50, 50, 0.75);
+        border-radius: 50px
+    }
+
+    .show-content {
+        font-weight: 400;
+        font-size: 1.2rem;
+    }
+
+    .body {
+    }
+
+    .border-bottom {
+        border-bottom: 1px solid #00b9ff !important;
+    }
+
+    .navbar {
+        color: white;
+        background-color: black;
+    }
+
+    .section {
+        padding-top: 40vh;
+        padding-bottom: 30vh;
+        width: 100%;
+        font-weight: 300 !important;
+        color: white;
+    }
+
+        .section:nth-child(1) {
+            background: url('https://static.wixstatic.com/media/3a0726_e70fae44928b4980aaaecd326433d719~mv2_d_4928_3126_s_4_2.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            color: #00b9ff;
+            padding-top: 7vh;
+            padding-bottom: 76vh;
+        }
+
+        .section:nth-child(2) {
+            /*background: url('https://www.this-is-cool.co.uk/wp-content/uploads/2017/10/the-3d-art-of-julen-urrutia.jpg');*/
+            background-image: url('images/play4.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            padding-top: 30vh;
+            padding-bottom: 20vh;
+        }
+
+
+            .section:nth-child(2) h2 {
+                font-size: 5rem;
+                font-weight: 500;
+            }
+
+            .section:nth-child(2) i {
+                font-size: 5rem;
+            }
+
+        .section:nth-child(3) {
+            /*background-color:cyan*/
+            background-image: url('images/nhr.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: none;
+        }
+
+        /*Shows*/
+        .section:nth-child(4) {
+            background-image: url('images/play3.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: bottom;
+
+            padding-top: 30vh;
+            padding-bottom: 20vh;
+        }
+
+        /*Mailing list*/
+        .section:nth-child(5) {
+            background-image: url('images/play.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /*Merch*/
+        .section:nth-child(6) {
+            background-image: url('images/play2.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /*Connect*/
+        .section:nth-child(7) {
+            background-image: url('images/blur.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            padding-top: 20vh;
+            padding-bottom: 20vh;
+        }
+
+    body .footer {
+        background-color: black;
+        border-top: 1px solid #00b9ff !important;
+    }
+</style>
+
+<style>
+
+    .navbar {
+        margin-bottom: 0px !important;
+        background-color: #071d27 !important;
+    }
+
+    /*.navbar .navbar-nav .nav-link {
+            color: white !important;
+        }
+
+        .navbar a.navbar-brand {
+            color: white !important;
+        }*/
+
+</style>
