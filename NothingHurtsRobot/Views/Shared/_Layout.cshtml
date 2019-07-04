@@ -20,7 +20,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-black border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-black box-shadow">
             <div class="container">
                 @*<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">nothing hurts robot</a>*@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -50,16 +50,21 @@
         </nav>
     </header>
     @*<div class="container">*@
-        @*<partial name="_CookieConsentPartial" />*@
-        <main role="main">
-            @RenderBody()
-        </main>
+    @*<partial name="_CookieConsentPartial" />*@
+    <main role="main">
+        @RenderBody()
+    </main>
     @*</div>*@
 
-    <footer class="border-top footer text-muted">
+    <footer class="footer text-muted text-center text-md-left">
         <div class="container">
-            &copy; @DateTime.Now.Year - Nothing Hurts Robot
-            @*- <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>*@
+            <span>
+                &copy; @DateTime.Now.Year - Made with &lt;3 by <a href="https://jesseholwell.azurewebsites.net">Jesse</a>
+                @*- <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>*@
+            </span>
+            @*<span>
+
+            </span>*@
         </div>
     </footer>
 
