@@ -10,14 +10,21 @@
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment exclude="Development">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+              crossorigin="anonymous"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
+
+    <script src="https://kit.fontawesome.com/700c7a8f41.js"></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    @*<nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -30,21 +37,39 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Configure">Configure</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link text" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text" asp-area="" asp-controller="Home" asp-action="Discography">Discography</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text" asp-area="" asp-controller="Home" asp-action="Video">Video</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text" asp-area="" asp-controller="Home" asp-action="Press">Press</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text" asp-area="" asp-controller="Home" asp-action="MailingList">Mailing List</a>
+                    </li>
                 </ul>
             </div>
         </div>
-    </nav>
-    <div class="container body-content">
+    </nav>*@
+    <main role="main">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Nothing Hurts Robot</p>
-        </footer>
-    </div>
+    </main>
+    <footer class="footer text-muted text-center text-md-left">
+        <div class="container">
+            <span>
+                &copy; @DateTime.Now.Year - Made with &lt;3 by <a href="https://jesseholwell.azurewebsites.net">Jesse</a>
+                @*- <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>*@
+            </span>
+            @*<span>
+
+                </span>*@
+        </div>
+    </footer>
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
@@ -66,6 +91,10 @@
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
+
+    <script>
+        AOS.init();
+    </script>
 
     @RenderSection("Scripts", required: false)
 </body>
